@@ -112,8 +112,8 @@ let cubeCount = 500;
 for (let i = 1; i <= cubeCount; i += 1) {
   let c = createCube();
   c.position.x = Math.random() * 400 - 200; // -200 to 200
-  c.position.y = Math.random() * 400 - 200;
-  c.position.z = Math.random() * 400 - 200;
+  c.position.y = Math.random() * 400 - 200; // -200 to 200
+  c.position.z = Math.random() * 400 - 200; // -200 to 200
   cubes.push(c);
 }
 
@@ -130,9 +130,10 @@ function animate() {
   cube.rotation.z += 0.01;
 
   cubes.forEach(function (c) {
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-    cube.rotation.z += 0.01;
+    c.rotation.x -= 0.01;
+    c.rotation.y -= 0.01;
+    c.rotation.z -= 0.01;
+  });
 
   // cube.rotation.z -= 0.1;
   // cube.position.z -= 0.1;
